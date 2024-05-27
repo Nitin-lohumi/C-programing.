@@ -5,7 +5,6 @@ int data;
 struct bst * left;
 struct bst * right;
 }node;
-
 node* create(){
  node * temp;
  printf("Enter the data for node ");
@@ -17,13 +16,12 @@ node* create(){
 }
 node* find_smallest(node*root){
 if(root==NULL){
-    return NULL;
+    return NULL;go
 }
 else if(root->left!= NULL){
     return find_smallest(root->left);
 }
 return root;
-
 }
 
 node*delete_node(node*root,int x){
@@ -43,15 +41,15 @@ else{
 
     }
     else if(root->left ==NULL||root->right==NULL){
-        node *temp;
+    node *temp;
     if(root->left==NULL){
         temp = root->right;
     }
     else{
         temp=root->left;
-        free(root);
-        return temp;
     }
+    free(root);
+    return temp;
     }
     else{
         node*temp = find_smallest(root->right);
@@ -106,7 +104,6 @@ if(root!=NULL){
 }
 printf("\n");
 }
-
 int main(){
     int choice;
     node* root = NULL;
