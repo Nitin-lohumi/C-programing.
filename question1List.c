@@ -4,6 +4,7 @@ struct node1{
 int data1;
 struct node1 * next1;
 };
+
 struct node2{
 int data2;
 struct node2* next2;
@@ -115,7 +116,6 @@ while(temp!=NULL){
 
 }
 
-
  void rev_link_2(){
 struct node2* temp ;
 temp = head2;
@@ -153,5 +153,4 @@ while((temp1!=NULL)&& (temp2!=NULL)){
     temp1= temp1->next1;
     temp2= temp2->next2;
 }
-
 }

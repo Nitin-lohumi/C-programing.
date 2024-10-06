@@ -75,7 +75,7 @@ if(head==NULL){
 }
 else{
   pop=head;
-  head= head->next;
+  head=head->next;
   free(pop);
   printf("\nvalue deleted\n");
 }

@@ -6,7 +6,6 @@ struct SelfReferential {
 };
 
 int main() {
-    // Creating instances of the self-referential structure
     struct SelfReferential node1, node2, node3;
     int data1,data2,data3;
     printf("enter data1");

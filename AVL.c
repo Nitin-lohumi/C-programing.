@@ -19,8 +19,6 @@ int max(int a, int b)
 {
 	return (a > b)? a : b;
 }
-
-
 struct Node* newNode(int key)
 {
 	struct Node* node = (struct Node*)
@@ -134,7 +132,7 @@ int key;
             printf("Exiting ........./n");
             break;
         default:
-            printf("AVL ... kro");
+            printf("AVL...kro");
             break;
         }
   }

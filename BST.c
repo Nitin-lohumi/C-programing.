@@ -16,7 +16,7 @@ node* create(){
 }
 node* find_smallest(node*root){
 if(root==NULL){
-    return NULL;go
+    return NULL;
 }
 else if(root->left!= NULL){
     return find_smallest(root->left);
@@ -119,6 +119,7 @@ int main(){
     printf("Enter your choice");
     scanf("%d",&choice);
     }while(choice!=5);
+
     printf("preorder traversal \n");
     perOrder(root);
     printf("The Inorder  traversal \n");

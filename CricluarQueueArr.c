@@ -48,15 +48,14 @@ void delete(){
 if(front==-1){
     printf("there is no any element to delete");
 }
-
 else{
     if(front==rear){
         front=rear=-1;
     }
     else{
         front = (front+1)%MAX;
-    }
 
+}
 }
 }
 void display(){
