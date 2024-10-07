@@ -1,4 +1,5 @@
 #include<stdio.h>
+//binary search
 int main(){
  int arr[] = {5,9,17,23,45,59,63,72,89};
  int n = sizeof(arr)/sizeof(arr[0]);
