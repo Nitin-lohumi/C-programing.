@@ -1,38 +1,44 @@
 #include<stdio.h>
-int partining(int arr[],int l, int h){
-int pivot =arr[h];
-int i = (l-1);
-for(int j = l; j<= h-1; j++){
-   if(arr[j]<pivot){
-    i++;
-    swap(&arr[i],&arr[j]);
+void findMaxMin(int arr[], int low, int high, int *max, int *min) {
+   if(low==high){
+     *min = *max = arr[low];
+     return;
    }
-}
- swap(&arr[i+1],&arr[j]);
- return (i+1);
-}
+   if(high == low+1){
+    if(arr[high]>arr[low]){
+      *min = arr[low];
+      *max = arr[high];
+    }else{
+      *min = arr[high];
+      *max = arr[low];
+    }
+    return;
+   }
+    int mid = low+(high-low)/2;
+    int minleft,minright,maxleft,maxright;
+    findMaxMin(arr,low,mid,&maxleft,&minleft);
+    findMaxMin(arr,mid+1,high,&maxright,&maxleft);
 
-
-void quickSort(int arr[],int l,int h){
-  if(l<h){
-    int partion =  partining(arr,l,h);
-
-    quickSort(arr,l,partion-1);
-    quickSort(arr,partion+1,h);
-  }
+    *max = (maxright>maxleft)? maxright:maxleft;
+    *min = (minleft<minright)? minleft:minright;
 }
 
 int main() {
-    int arr[] = {10, 7, 8, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
 
-    printf("Unsorted array: \n");
-    printArray(arr, n);
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
 
-    quickSort(arr, 0, n - 1);
+    int max, min;
+    findMaxMin(arr, 0, n - 1, &max, &min);
 
-    printf("Sorted array: \n");
-    printArray(arr, n);
+    printf("Maximum element: %d\n", max);
+    printf("Minimum element: %d\n", min);
 
     return 0;
 }
